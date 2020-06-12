@@ -1,0 +1,2 @@
+export const SAVE_USER_INFO='USER_INFO';
+export const SAVE_WX_SESSION_INFO='SAVE_WX_SESSION_INFO';
