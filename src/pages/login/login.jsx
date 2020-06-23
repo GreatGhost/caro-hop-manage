@@ -18,7 +18,12 @@ class Login extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      login     }
+      count:60,
+      loginParam:{
+        account:'',
+        verCode:''
+      }
+    }
   }
 
    config = {
@@ -43,14 +48,29 @@ class Login extends Component {
       })
   }
 
-  handleInput(e){
-    
+  handleInput(valueType,e){
+    let {loginParam}=this.state;
+    loginParam[valueType]=e.detail.value;
+    this.setState({
+      loginParam
+    })
   }
 
   sendLoginCode(){
-
+    let timeId=setInterval(()=>{
+      if(this.state.count<=0){clearInterval(timeId);return};
+      let count=this.state.count;
+      this.setState({
+        count:count-1
+      })
+    },1000)
   }
 
+  addCount(){
+    this.setState({
+      count:this.state.count+1
+    })
+  }
   componentWillMount () {
       
   }
@@ -71,18 +91,18 @@ class Login extends Component {
         <View className="login-form">
           <View className="login-form-item">
             <Image className="login-input-icon" src={userIcon}></Image>
-            <View className="form-value"><Input placeholderStyle="color:#ccc;" type="number" placeholder="请输入你的手机号" className="value"></Input></View>
+            <View className="form-value"><Input placeholderStyle="color:#ccc;" type="number" onInput={this.handleInput.bind(this,'account')} placeholder="请输入你的手机号" className="value"></Input></View>
           </View>
           <View className="login-form-item">
             <Image className="login-input-icon" src={codeIcon}></Image>
             <View className="form-value">
               <Input className="value" placeholder="请输入你的验证码" type="number" placeholderStyle="color:#ccc;" maxLength="4" onInput={this.handleInput}></Input>
-              <View className="send-code" onClick={this.sendCode}>获取验证码</View>
+                {this.state.count==60? <View className="send-code" onClick={this.sendLoginCode}>获取验证码</View>: <View className="send-code">{this.state.count}s后重新获取</View>}
               </View>
           </View>
         </View>
 
-        <View className="login-confirm">立即登录</View>
+        <View className="login-confirm" onClick={this.addCount}>立即登录</View>
       </View>
     );
   }
