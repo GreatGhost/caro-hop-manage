@@ -1,10 +1,10 @@
 import Taro, { Component } from '@tarojs/taro'
 import { Provider } from '@tarojs/redux'
-
+import userConfig from './util/userConfig';
 import Index from './pages/index'
 
 import configStore from './store'
-
+import 'taro-ui/dist/style/index.scss' // 全局引入一次即可
 import './app.scss'
 
 // 如果需要在 h5 环境中开启 React Devtools
@@ -14,13 +14,15 @@ import './app.scss'
 // }
 
 const store = configStore()
-
+Component.prototype.$userConfig=userConfig;
 class App extends Component {
 
   config = {
     pages: [
       'pages/index/index',
-      'pages/login/login'
+      'pages/login/login',
+      'pages/mine/mine',
+      'pages/goodsEdit/goodsEdit'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -48,5 +50,6 @@ class App extends Component {
     )
   }
 }
+
 
 Taro.render(<App />, document.getElementById('app'))

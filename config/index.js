@@ -41,7 +41,7 @@ const config = {
     '@constants': path.resolve(__dirname, '..', 'src/constants'),
     '@reducers': path.resolve(__dirname, '..', 'src/reducers'),
     '@styles': path.resolve(__dirname, '..', 'src/styles'),
-    '@utils': path.resolve(__dirname, '..', 'src/utils'),
+    '@util': path.resolve(__dirname, '..', 'src/util'),
     '@api':path.resolve(__dirname,'..','src/api')
   },
   mini: {
@@ -97,7 +97,9 @@ const config = {
           namingPattern: 'module', // 转换模式，取值为 global/module
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
-      }
+      },
+
+      esnextModules: ['taro-ui']
     }
   }
 }

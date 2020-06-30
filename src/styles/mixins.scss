@@ -1,0 +1,11 @@
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+@mixin wh($width,$height){
+  width:$width;
+  height: $height;
+}

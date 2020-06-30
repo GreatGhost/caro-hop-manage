@@ -1,0 +1,63 @@
+@import '@styles/theme.scss';
+.mine{
+    min-height: 100vh;
+    background-color: $base-bg;
+    .login-out{
+      margin:0 15px 0;
+      height:52px;
+      font-size:14px;
+      font-family:PingFangSC-Semibold,PingFang SC;
+      font-weight:600;
+      color:rgba(0,0,0,1);
+      line-height:52px;
+      background-color: #FFFFFF;
+      border:1px solid #fff;
+    }
+}
+.mine-tab-list {
+  margin:0 15px 0;
+  display: flex;
+  align-items: center;
+  padding: 24px 15px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 4px;
+
+  .mine-item {
+    flex: 1;
+
+    &:not(:first-child) {
+      margin-left: 30px;
+    }
+
+    .tab-icon {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .tab-title {
+      margin-top:8px;
+      font-size: 14px;
+      font-family: PingFang-SC-Medium, PingFang-SC;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 1);
+      line-height: 20px;
+      text-align: center;
+      white-space: nowrap;
+    }
+  }
+
+}
+
+.mine-link{
+  margin:12px 15px 12px;
+  padding:0 16px;
+  background:rgba(255,255,255,1);
+  border-radius:4px;
+  .link-item:not(:first-child){
+    border-top:1px solid #E6E6E6;
+  }
+}
+

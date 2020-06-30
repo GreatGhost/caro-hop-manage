@@ -53,6 +53,20 @@
 					"id": -1,
 					"name": "登录",
 					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的页面",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商品编辑",
+					"pathName": "pages/goodsEdit/goodsEdit",
 					"scene": null
 				}
 			]
